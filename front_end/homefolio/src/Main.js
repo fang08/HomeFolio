@@ -32,11 +32,11 @@ class Main extends React.Component {
     render() {
         return (
             <Provider store={store}>
-                <BrowserRouter>
+                <BrowserRouter basename={process.env.PUBLIC_URL}>
                     <Switch>
                         <Route exact path='/' component={Public} />
-                        <Route path='/login' component={Login} />
-                        <Route path='/signup' component={Signup} />
+                        <Route exact path='/login' component={Login} />
+                        <Route exact path='/signup' component={Signup} />
                         <this.PrivateRoute path='/home' component={Home} />
                         <this.PrivateRoute path='/houseinfo/:h_id' component={HouseInfo} />
                         <this.PrivateRoute path='/userinfo/:u_id' component={UserInfo} location={this.props.location} />

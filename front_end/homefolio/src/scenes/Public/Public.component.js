@@ -8,6 +8,7 @@ import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
 import orange from 'material-ui/colors/deepOrange';
+import { Link } from 'react-router-dom';
 
 const styles = theme => ({
     button: {
@@ -115,7 +116,8 @@ const Public = (props) => {
                     className={classes.button}
                     color='primary'
                     size='large'
-                    href='login' >
+                    component={Link}
+                    to={'/login'} >
                     LOGIN
                 </Button>
                 <Button
@@ -124,7 +126,8 @@ const Public = (props) => {
                     className={classes.button}
                     color='primary'
                     size='large'
-                    href='signup' >
+                    component={Link}
+                    to='/signup' >
                     SIGNUP
                 </Button>
             </Paper>

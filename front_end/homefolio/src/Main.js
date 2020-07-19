@@ -13,7 +13,8 @@ import UserInfo from './scenes/UserInfo/UserInfo.component';
 import NotFound from './scenes/NotFound/NotFound.component';
 import AuthService from './services/auth.service';
 
-export const servAddr = 'http://localhost:1323';
+export const servAddr = 'http://ec2-3-128-153-42.us-east-2.compute.amazonaws.com:1323';
+// export const servAddr = 'http://localhost:1323';
 export const urlPrefix = '/api/v1';
 
 class Main extends React.Component {

@@ -7,8 +7,9 @@ import (
 
 func main() {
 	// Instantiate server
-	dbURL := "chho/Lego1424@oracle.cise.ufl.edu:1521/orcl"
-	srvAddr := "localhost:1323"
+	dbURL := "admin/adminpassword@database-1.c3yn9dlnua9q.us-east-2.rds.amazonaws.com/ORCL"
+	srvAddr := "ec2-3-128-153-42.us-east-2.compute.amazonaws.com:1323"
+	// srvAddr := "localhost:1323"
 	h := handler.NewHandler(dbURL)
 	e := server.NewServer(h)
 

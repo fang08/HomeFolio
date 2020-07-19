@@ -330,11 +330,8 @@ func (h *Handler) FetchLikedHouse(c echo.Context) (err error) {
 func (h *Handler) FetchViewedHouse(c echo.Context) (err error) {
 	query :=
 		`SELECT house.h_id, latitude, longitude, time
-		FROM (SELECT * FROM viewed 
-			 union 
-			 SELECT * FROM FANG.viewed) v,
-			 house 
-		WHERE house.h_id = v.h_id and v.u_id = &var1`
+		FROM viewed, house 
+		WHERE house.h_id = viewed.h_id and viewed.u_id = &var1`
 	rows, err := h.db.Query(query, c.Param("uid"))
 	if err != nil {
 		return err
@@ -371,7 +368,7 @@ func (h *Handler) FetchViewedHouse(c echo.Context) (err error) {
 //				   Method: GET
 //				   Return 200 OK on success.
 func (h *Handler) FetchBoughtHouse(c echo.Context) (err error) {
-	query := "SELECT h_id, latitude, longitude FROM FANG.bought_house WHERE u_id = &var1"
+	query := "SELECT h_id, latitude, longitude FROM bought_house WHERE u_id = &var1"
 	rows, err := h.db.Query(query, c.Param("uid"))
 	if err != nil {
 		return err
@@ -429,9 +426,7 @@ func (h *Handler) IsPopularUser(c echo.Context) (err error) {
 				FROM house
 				WHERE u_id = &var1)
 				NATURAL JOIN
-				(SELECT * FROM viewed
-				UNION
-				SELECT * FROM FANG.viewed)))`
+				viewed))`
 	err = h.db.QueryRow(query, c.Param("uid"), c.Param("uid")).Scan(&likeCount, &viewCount)
 	if err != nil {
 		return err
@@ -459,9 +454,7 @@ func (h *Handler) IsActiveUser(c echo.Context) (err error) {
 	viewCount := 0
 	query :=
 		`SELECT count(*)
-		FROM (SELECT * FROM viewed
-			 UNION
-			 SELECT * FROM FANG.viewed)
+		FROM viewed
 		WHERE u_id = &var1 and time > to_date(&var2,'YYYY-MM-DD')`
 	err = h.db.QueryRow(query, c.Param("uid"), time.Now().AddDate(-1, 0, 0).String()[:10]).Scan(&viewCount)
 	if err != nil {

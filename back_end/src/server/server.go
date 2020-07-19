@@ -32,7 +32,7 @@ func NewServer(h *handler.Handler) (e *echo.Echo) {
 
 	// CORS config
 	e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
-		AllowOrigins:     []string{"http://localhost:3000"},
+		AllowOrigins:     []string{"http://localhost:3000", "http://fang08.github.io/HomeFolio", "https://fang08.github.io/HomeFolio", "http://homefolio.fang.hojason117.com", "https://homefolio.fang.hojason117.com"},
 		AllowMethods:     []string{echo.GET, echo.PUT, echo.POST, echo.DELETE},
 		AllowCredentials: true,
 		AllowHeaders:     []string{echo.HeaderAuthorization, echo.HeaderContentType},

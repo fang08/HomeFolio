@@ -23,7 +23,7 @@ const styles = theme => ({
         backgroundRepeat: 'no-repeat',
         height: '70vh',
         padding: '320px 480px',
-        backgroundImage: "url('https://cdn.freshome.com/wp-content/uploads/2016/10/white-houses-freshome18.png')",
+        backgroundImage: "url('https://images.adsttc.com/media/images/5ef1/3ffe/b357/6529/f500/028c/slideshow/twilight_front_elevation.jpg?1592868855&fbclid=IwAR2DQdF9_ccBGqlWzBi51x_t0l8xwqvsxblziw8xqfUhh8hYsH3yuKWIuFw')",
         textAlign: "center",
     },
     paper1: {
@@ -44,7 +44,7 @@ const styles = theme => ({
         marginRight: '12px',
         padding: '160px 160px',
         height: '320px',
-        backgroundImage: "url('https://img.domino.com/serve/the-best-kitchens-on-instagram-currently-568c09519ce40985052063f4-w620_h800.jpg')",
+        backgroundImage: "url('https://images.adsttc.com/media/images/5584/280c/e58e/ce09/c200/011d/slideshow/sculp(IT)-Lalo-036web.jpg?1434724357&fbclid=IwAR0S5Av8qAzlbp2HW0mVpRoRazbxW6A1ukbjYCF_U3U-BXaSnkscELstukw')",
         textAlign: 'center',
         opacity: '0.7',
     },

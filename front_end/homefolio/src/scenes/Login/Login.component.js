@@ -55,44 +55,54 @@ class Login extends React.Component {
             return <Redirect to={{ pathname: "/home" }} />
 
         return (
-            <div className={classes.root} onKeyDown={e => {if(e.keyCode === 13) this.login();}}>
-                <AppBar position='static'>
-                    <Toolbar>
-                        <Typography variant="title" color="inherit" className={classes.flex}>
-                            Login
-                        </Typography>
-                    </Toolbar>
-                </AppBar>
-                <form className={classes.container}>
-                    <TextField
-                        required
-                        autoFocus
-                        id='loginEmailField'
-                        className={classes.textField}
-                        label='email'
-                        placeholder='Email' 
-                        margin='normal'
-                        onChange={event => this.setState({email: event.target.value})}
-                    />
-                    <TextField
-                        required
-                        id='loginPasswordField'
-                        className={classes.textField}
-                        label='password'
-                        placeholder='Password'
-                        type='password'
-                        margin='normal'
-                        onChange={event => this.setState({password: event.target.value})}
-                    />
-                    <Button
-                        variant='raised'
-                        primary='true'
-                        className={classes.button}
-                        color='primary'
-                        onClick={this.login} >
-                        login
-                    </Button>
-                </form>
+            <div>
+                <div className={classes.root} onKeyDown={e => {if(e.keyCode === 13) this.login();}}>
+                    <AppBar position='static'>
+                        <Toolbar>
+                            <Typography variant="title" color="inherit" className={classes.flex}>
+                                Login
+                            </Typography>
+                        </Toolbar>
+                    </AppBar>
+                    <form className={classes.container}>
+                        <TextField
+                            required
+                            autoFocus
+                            id='loginEmailField'
+                            className={classes.textField}
+                            label='email'
+                            placeholder='Email' 
+                            margin='normal'
+                            onChange={event => this.setState({email: event.target.value})}
+                        />
+                        <TextField
+                            required
+                            id='loginPasswordField'
+                            className={classes.textField}
+                            label='password'
+                            placeholder='Password'
+                            type='password'
+                            margin='normal'
+                            onChange={event => this.setState({password: event.target.value})}
+                        />
+                        <Button
+                            variant='raised'
+                            primary='true'
+                            className={classes.button}
+                            color='primary'
+                            onClick={this.login} >
+                            login
+                        </Button>
+                    </form>
+                </div>
+                <div>
+                    <br/>
+                    Demo user:
+                    <br/>
+                    Email: test@example.com
+                    <br/>
+                    Password: test
+                </div>
             </div>
         )
     }

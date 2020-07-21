@@ -21,6 +21,7 @@ back_end/src/golang.org/
 back_end/src/sourcegraph.com
 
 front_end/homefolio/node_modules
+front_end/homefolio/pics
 
 .DS_Store
 
